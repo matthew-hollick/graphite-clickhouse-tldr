@@ -44,3 +44,22 @@ graphite-web:
     - graphite-clickhouse
   ports:
   - "80:80" # http ui
+carbonapi:
+  image: 0rph3us/carbonapi
+  volumes:
+    - "./carbonapi.yaml:/etc/carbonapi.yaml"
+    - "./carbonapi_entrypoint.sh:/entrypoint.sh"
+  command: ["/sbin/carbonapi", "-config", "/etc/carbonapi.yaml"]
+  links:
+    - graphite-clickhouse
+    - carbon-clickhouse
+grafana:
+  image: grafana/grafana
+  ports:
+    - "3000:3000"
+  volumes:
+    - "./grafana/datasources:/etc/grafana/provisioning/datasources"
+    - "./grafana/data:/var/lib/grafana/"
+  links:
+    - graphite-web
+    - carbonapi
