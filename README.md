@@ -1,7 +1,8 @@
 # Quick Start
 ```sh
-git clone https://github.com/lomik/graphite-clickhouse-tldr
-pushd graphite-clickhouse-tldr/dockerfiles/carbonapi
+git clone https://github.com/matthew-hollick/graphite-clickhouse-tldr.git
+cd graphite-clickhouse-tldr
+pushd dockerfiles/carbonapi
 docker build -t carbonapi .
 popd
 docker-compose up
