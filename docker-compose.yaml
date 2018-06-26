@@ -45,7 +45,7 @@ graphite-web:
   ports:
   - "80:80" # http ui
 carbonapi:
-  image: 0rph3us/carbonapi
+  image: carbonapi
   volumes:
     - "./carbonapi.yaml:/etc/carbonapi.yaml"
     - "./carbonapi_entrypoint.sh:/entrypoint.sh"
