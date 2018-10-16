@@ -5,11 +5,11 @@ deleteDatasources:
     orgId: 1
 
 datasources:
-- name: carbon-clickhouse
+- name: carbonapi
   type: graphite
   access: proxy
   orgId: 1
-  url: http://graphite/
+  url: http://carbonapi/
   password:
   user:
   database:
